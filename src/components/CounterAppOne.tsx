@@ -2,11 +2,14 @@ import { Text, Button, Flex } from "@chakra-ui/react";
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
-type Props = {
-  parentCount?: number;
+// These props are injected by the shell app.
+// TODO: Publish this type in an npm package so all remotes can reference it (or, even simpler, put remotes and shell in a monorepo)
+type RemoteProps = {
+  parentCount: number;
+  nav: (url: string) => void;
 };
 
-export default function Counter(props: Props) {
+export default function RemoteAppOne({ nav, parentCount }: RemoteProps) {
   const [count, setCount] = useState(0);
 
   const location = useLocation();
@@ -14,8 +17,11 @@ export default function Counter(props: Props) {
   return (
     <Flex color="#000" gap="1rem" direction="column">
       <Text>Click count: {count} </Text>
-      <Text>Parent count: {props.parentCount} </Text>
+      <Text>Parent count: {parentCount} </Text>
       <Button onClick={() => setCount(count + 1)}>Click me</Button>
+
+      <Button onClick={() => nav("/about")}>Go to about</Button>
+      <Link to="/about">Go to about</Link>
       {location.pathname !== "/" && (
         <Button as={Link} to="/">
           Back to shell
