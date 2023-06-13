@@ -9,7 +9,7 @@ type RemoteProps = {
   nav: (url: string) => void;
 };
 
-export default function RemoteAppOne({ nav, parentCount }: RemoteProps) {
+export default function RemoteOne({ nav, parentCount }: RemoteProps) {
   const [count, setCount] = useState(0);
 
   const location = useLocation();

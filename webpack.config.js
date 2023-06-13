@@ -26,11 +26,11 @@ module.exports = {
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: "app1",
+      name: "remote1",
       filename: "remoteEntry.js",
       exposes: {
         // expose each component
-        "./CounterAppOne": "./src/components/CounterAppOne",
+        "./RemoteOne": "./src/components/RemoteOne",
       },
       shared: {
         ...deps,
