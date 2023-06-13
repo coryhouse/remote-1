@@ -1,5 +1,5 @@
 import { Box } from "@chakra-ui/react";
-import CounterAppOne from "./components/CounterAppOne";
+import RemoteOne from "./components/RemoteAppOne";
 import { useNavigate } from "react-router-dom";
 
 // This component merely exists to run the remote in isolation
@@ -11,7 +11,7 @@ export function App() {
       <Box>APP-1</Box>
       <Box>
         {/* Hard coding these props for local dev of this remote in isolation. These props are provided by the shell in the production app. */}
-        <CounterAppOne parentCount={0} nav={navigate} />
+        <RemoteOne parentCount={0} nav={navigate} />
       </Box>
     </Box>
   );
