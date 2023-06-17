@@ -2,6 +2,8 @@ const webpack = require("webpack"); // only add this if you don't have yet
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { ModuleFederationPlugin } = require("webpack").container;
 const deps = require("./package.json").dependencies;
+const BundleAnalyzerPlugin =
+  require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 
 const buildDate = new Date().toLocaleString();
 
@@ -32,6 +34,7 @@ module.exports = {
     new webpack.DefinePlugin({
       "process.env": JSON.stringify(process.env),
     }),
+    ...(process.env.ANALYZE === "Y" ? [new BundleAnalyzerPlugin()] : []),
     new ModuleFederationPlugin({
       name: "remote1",
       filename: "remoteEntry.js",
