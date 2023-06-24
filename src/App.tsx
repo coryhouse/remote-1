@@ -1,11 +1,8 @@
 import { Box } from "@chakra-ui/react";
 import RemoteOne from "./components/RemoteOne";
-import { useNavigate } from "react-router-dom";
 
 // This component merely exists to run the remote in isolation
 export function App() {
-  const navigate = useNavigate();
-
   return (
     <Box margin="1.2rem">
       <Box>REMOTE-1</Box>
