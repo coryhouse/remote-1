@@ -55,7 +55,7 @@ export default function RemoteOne({
       <button onClick={() => setCount(count + 1)}>Increment local count</button>
 
       <Routes>
-        <Route path="/" element={<h2>Remote 1 home page</h2>} />
+        <Route path="/" element={<h2>Remote 1 home</h2>} />
         <Route path="page1" element={<h2>Remote 1 page 1</h2>} />
         <Route path="page2" element={<h2>Remote 1 page 2</h2>} />
         <Route path="*" element={<h2>404 - Remote 1 Page Not Found</h2>} />
