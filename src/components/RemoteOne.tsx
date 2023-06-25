@@ -25,6 +25,7 @@ export default function RemoteOne({
 
   return (
     <Flex color="#000" gap="1rem" direction="column">
+      <h2>Remote 1</h2>
       <p>Build date: {buildDate}</p>
       <p>Hi {user.name}</p>
       <Text>Click count: {count} </Text>
