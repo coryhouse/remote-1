@@ -6,13 +6,23 @@ const BundleAnalyzerPlugin =
   require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 
 const buildDate = new Date().toLocaleString();
+const devPort = 3002;
 
 module.exports = {
   entry: "./src/index.ts",
   mode: "development",
+  output: {
+    publicPath:
+      process.env.production === "true"
+        ? undefined
+        : // Required for the historyApiFallback setting to work per https://ui.dev/react-router-cannot-get-url-refresh#webpack--development
+          `http://localhost:${devPort}/`,
+  },
   devServer: {
-    port: 3001,
+    port: devPort,
     open: true,
+    // Redirect all requests to index.html so client-side routing works
+    historyApiFallback: true,
     headers: {
       "Access-Control-Allow-Origin": "*",
     },

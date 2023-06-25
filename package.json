@@ -19,8 +19,8 @@
   },
   "scripts": {
     "start": "webpack serve",
-    "build": "webpack --mode production",
-    "serve": "serve dist -p 3001",
+    "build": "cross-env production=true webpack --mode production && cd dist && cp index.html 200.html",
+    "serve": "serve dist -p 3001 -s",
     "clean": "rm -rf dist",
     "deploy": "cd dist && surge --domain spotted-list.surge.sh",
     "analyze": "cross-env ANALYZE=Y npm run build"

@@ -9,6 +9,7 @@ export function App() {
       <Box>
         {/* Hard coding these props for local dev of this remote in isolation. These props are provided by the shell in the production app. */}
         <RemoteOne
+          baseUrl=""
           parentCount={0}
           user={{ id: 2, name: "Bobby" }}
           urls={{ about: "/about", home: "/" }}
