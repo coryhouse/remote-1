@@ -6,7 +6,7 @@ const BundleAnalyzerPlugin =
   require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 
 const buildDate = new Date().toLocaleString();
-const devPort = 3002;
+const devPort = 3001;
 
 module.exports = {
   entry: "./src/index.ts",
