@@ -10,7 +10,7 @@ createRoot(document.getElementById("root") as HTMLElement).render(
     <RemoteOne
       baseUrl=""
       parentCount={0}
-      user={{ id: 2, name: "Bobby" }}
+      user={{ id: 2, name: "Cory" }}
       urls={{ about: "/about", home: "/" }}
     />
   </BrowserRouter>
