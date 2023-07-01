@@ -8,6 +8,7 @@ var buildDate = process.env.BUILD_DATE;
 type RemoteProps = {
   baseUrl: string;
   parentCount: number;
+  account: string;
   urls: Record<"about" | "home", string>;
   user: { id: number; name: string };
 };
@@ -17,6 +18,7 @@ export default function RemoteOne({
   urls,
   user,
   parentCount,
+  account,
 }: RemoteProps) {
   const [count, setCount] = useState(0);
 
@@ -50,6 +52,7 @@ export default function RemoteOne({
 
       <p>Build date: {buildDate}</p>
       <p>Hi {user.name}</p>
+      <p>Account: {account}</p>
       <p>Local count: {count} </p>
       <p>Shell count: {parentCount} </p>
       <button onClick={() => setCount(count + 1)}>Increment local count</button>
