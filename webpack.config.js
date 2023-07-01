@@ -17,7 +17,7 @@ module.exports = (env, argv) => {
       publicPath: isProduction
         ? undefined
         : // Required for the historyApiFallback setting to work per https://ui.dev/react-router-cannot-get-url-refresh#webpack--development
-          `http://localhost:${devPort}/`,
+        `http://localhost:${devPort}/`,
     },
     devServer: {
       port: devPort,
