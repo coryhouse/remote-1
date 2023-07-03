@@ -24,6 +24,8 @@ export default function RemoteOne({
 
   const location = useLocation();
 
+  if (parentCount > 2) throw new Error("Parent count is greater than 2.");
+
   return (
     <>
       <h2>Remote 1</h2>
@@ -56,6 +58,11 @@ export default function RemoteOne({
       <p>Local count: {count} </p>
       <p>Shell count: {parentCount} </p>
       <button onClick={() => setCount(count + 1)}>Increment local count</button>
+
+      <p>
+        This remote throws an error and falls back to the Shell's Error boundary
+        when the parent count is greater than 2.
+      </p>
 
       <Routes>
         <Route path="/" element={<h2>Remote 1 home</h2>} />
