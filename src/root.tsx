@@ -1,6 +1,6 @@
 import { createRoot } from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
-import RemoteOne from "./components/RemoteOne";
+import RemoteOne from "./RemoteOne";
 
 // This root is used for running the remote by itself.
 // The shell wraps all remotes in a BrowserRouter, so we must do the same here.
