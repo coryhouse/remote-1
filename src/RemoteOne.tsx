@@ -24,7 +24,7 @@ export default function RemoteOne({
 
   const location = useLocation();
 
-  if (parentCount > 2) throw new Error("Parent count is greater than 2.");
+  if (parentCount > 2) throw new Error("Shell count is greater than 2.");
 
   return (
     <>
