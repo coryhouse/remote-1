@@ -14,10 +14,8 @@ module.exports = (env, argv) => {
     entry: "./src/index.ts",
     mode: "development",
     output: {
-      publicPath: isProduction
-        ? undefined
-        : // Required for the historyApiFallback setting to work per https://ui.dev/react-router-cannot-get-url-refresh#webpack--development
-        `http://localhost:${devPort}/`,
+      publicPath: "/remote1/",
+
     },
     devServer: {
       port: devPort,
@@ -51,7 +49,7 @@ module.exports = (env, argv) => {
         filename: "remoteEntry.js",
         exposes: {
           // expose each component
-          "./RemoteOne": "./src/components/RemoteOne",
+          "./remote1": "./src/components/RemoteOne",
         },
         shared: {
           ...deps,
