@@ -1,0 +1,26 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: remote1-ingress
+  namespace: client-webapps
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
+spec:
+  ingressClassName: nginx
+  rules:
+    - http:
+        paths:
+          - path: /remote1(/|$)(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: remote-1-svc
+                port:
+                  number: 80
+          - path: /RemoteOne(/|$)(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: remote-1-svc
+                port:
+                  number: 80
