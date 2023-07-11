@@ -11,7 +11,7 @@ const devPort = 3001;
 module.exports = (env, argv) => {
   const isProduction = argv.mode === "production";
   return {
-    entry: "./src/index.ts",
+    entry: "./src/index.tsx",
     mode: "development",
     output: {
       publicPath: isProduction
