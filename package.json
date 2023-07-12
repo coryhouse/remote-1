@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "cross-env PORT=3001 react-scripts start",
+    "start": "webpack serve",
     "test": "react-scripts test",
     "build": "webpack --mode production && cd dist && cp index.html 200.html",
     "serve": "serve dist -p 3001 -s",
