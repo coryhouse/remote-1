@@ -1,5 +1,8 @@
-import { useState } from "react";
+import { Suspense, lazy, useState } from "react";
 import { Link, Route, Routes, useLocation } from "react-router-dom";
+
+const Page1 = lazy(() => import("./Page1"));
+const Page2 = lazy(() => import("./Page2"));
 
 var buildDate = process.env.BUILD_DATE;
 
@@ -66,8 +69,22 @@ export default function RemoteOne({
 
       <Routes>
         <Route path="/" element={<h2>Remote 1 home</h2>} />
-        <Route path="page1" element={<h2>Remote 1 page 1</h2>} />
-        <Route path="page2" element={<h2>Remote 1 page 2</h2>} />
+        <Route
+          path="page1"
+          element={
+            <Suspense fallback={<h2>Loading page 1...</h2>}>
+              <Page1 />
+            </Suspense>
+          }
+        />
+        <Route
+          path="page2"
+          element={
+            <Suspense fallback={<h2>Loading page 2...</h2>}>
+              <Page2 />
+            </Suspense>
+          }
+        />
         <Route path="*" element={<h2>404 - Remote 1 Page Not Found</h2>} />
       </Routes>
     </>
